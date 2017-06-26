@@ -1,0 +1,23 @@
+dist: trusty
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+#  addons:
+#      sonarqube:
+#        organization: "gojava5group6"
+#        token:
+#          secure: V/Vyp0vulsFjxLxYQ/kJzdINmCS0DMeJTJesIbaXreCdY1izlr0WySFlxOz4HEEiKyiUhHEvfTAMclEWiz/XZUUb5jwfYKlJlps4MK/2fq4x2RCJ/BisKliWI0tk2od/Hk5Y2C9rx+gpvDfxWjFmzrFs7c7myuEnqaq65HVRHM7XqOqUdseI2PEPVMzr/4f0aozeIujqEohfHTINWRbDAET0Udm4RdwPlkc9oHRnytYdpb3Qk4Nrs9SE8qjKY6FLbk6UbtP2M3jFy37cBsn9wPityxQgCTmMMjS2Uf9j4UFOhpPAsGXt61MUth6xj66qDcmyrK9uYys59dN6nAyANGCNQkVD9fKUd3wLUtWGYxFFuHITTYvoRo0zDRwp3RTazIZ8H7MGufjgEqZg55DoKNYp5f6qgokic/txTM4R54Gljuyf8TNcon0DUPccyrrAUohkrNHem+wlc/dsAhzkzhBxrKxYcyaTqQEBH+D9lu1QjUerOnegF/Oxyp6Sn3FjwT7qVeoqnuTU17k4lNSkRgJ6tgh5uWGDzu6zKYlLv9UdY4QwXxqjSe+W1nXjjNDZMEVljnC4DYBdekZNd9d0kNe+gAAAbGVRRoYJ/NuUYi3nme3oLwk5sF9rOQzq5bygiW//dgIHFtTiQOiWpOIsfG60ZBy0kdriUmQKbkuc/t4=
+#        github_token:
+#          secure: hCad4XwShC6Bv6yt5/Bq4R6AHvf/5vh5Z/ifOEgioSeXahmKgohMdjBu4DNCjAJxpxArDZP1uZgP5Y6vcjN7eyjqlBqdIRqUk7x4xWEJP5Srb1hr7ZHtRiGpEMTt6Y3gzkK0mgXCOv41NS2mMcmeIL/AN5cwksFfMPIKqgWZxK1khA6KeKuYcbeuMzTLmEb0XTlUo4RHDWjTQCvP0ene8Svb1YKK12n1RxL2zIy58KFaDfBN3vudBJheNIVfT3HmQTA/8R+8cwKHsnxWu3Rjj9z9S+uKX6/JXnSv+RX2bOOYmZc5xHzCKqH4ojiCAgepWG4MXQFHy3wc2UAiKRXT6Z1401TpqoYZIhIpnc3byEFYkmP6dIRc+R9n+J7qqUDpQK+/7HcFt3K88fO1DgMCIA6AmYf98OcCKBXSrflxn4aVisHn4eAM8QUkl/i9saxje6teN/fH2QMbFgpGcH7jMKUFUvAqEzQU983MaMbLpoMAPNXiQRp86GXQhl7On1Hh353ZiArRpy3mQpJqpy/U0Lm2Xba13yCxFmgxTeUO/eG3hljVUIzASJUTDMRRKPWxD5pngG5ekul0DChntF3gNqIA9ud3hy7vjwVtTAt/ewQmBqzjQ5ruB3TZaJnJJgVEw77GrQkGJTJBQh60xIjVwThiX1UbUQlym4QAa7BQN8Y=
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.sonar
+
+script:
+  - mvn clean test
+  - sonar-scanner
