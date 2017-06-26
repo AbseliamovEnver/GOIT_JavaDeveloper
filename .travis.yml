@@ -16,8 +16,8 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
-    - $HOME/.sonar
+#    - $HOME/.sonar
 
 script:
   - mvn clean test
-  - sonar-scanner
+#  - sonar-scanner
